@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Consulta</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h2>Consultar Solicitud</h2>
+
+<input
+type="text"
+id="folio"
+placeholder="MRC26-12345">
+
+<br><br>
+
+<button onclick="consultar()">
+Consultar
+</button>
+
+<p id="resultado"></p>
+
+</div>
+
+<script>
+
+function consultar(){
+
+let folio=
+document.getElementById("folio").value;
+
+let estado=
+localStorage.getItem(folio);
+
+if(estado){
+
+document.getElementById("resultado").innerHTML=
+"🟡 Estado: "+estado;
+
+}else{
+
+document.getElementById("resultado").innerHTML=
+"❌ Folio no encontrado";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
