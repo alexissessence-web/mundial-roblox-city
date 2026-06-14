@@ -1,56 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Consulta</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Folio - Mundial Roblox City 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <div class="container spec-container">
+        <nav class="nav-links">
+            <a href="index.html">Inicio</a> | 
+            <a href="registro.html">Registro</a> | 
+            <a href="consultar.html" class="active">Consultar Estado</a>
+        </nav>
 
-<h2>Consultar Solicitud</h2>
+        <header class="form-header">
+            <h2>🔍 SISTEMA DE CONSULTA 📊</h2>
+            <h1>VERIFICA TU SOLICITUD</h1>
+            <p class="subtitle">Introduce tu número de folio oficial para conocer el estado de tu postulación al Mundial.</p>
+        </header>
 
-<input
-type="text"
-id="folio"
-placeholder="MRC26-12345">
+        <form id="consulta">
+            <div class="form-group">
+                <label for="folio-input">Introduce tu Código de Folio:</label>
+                <input type="text" id="folio-input" placeholder="Ej: MRC26-00005" required autocomplete="off">
+                <p class="field-instruction">⚠️ Respeta el guion y escribe las letras en mayúsculas.</p>
+            </div>
 
-<br><br>
+            <button type="submit" class="btn-submit">Buscar Estado</button>
+        </form>
 
-<button onclick="consultar()">
-Consultar
-</button>
+        <div id="resultado-consulta" class="hidden">
+            <div class="resultado-card">
+                <h3>Resultado de Postulación</h3>
+                <hr class="divider-mini">
+                
+                <div class="data-row">
+                    <strong>Usuario de Roblox:</strong> 
+                    <span id="res-usuario">-</span>
+                </div>
+                
+                <div class="data-row">
+                    <strong>Puesto Solicitado:</strong> 
+                    <span id="res-rol">-</span>
+                </div>
+                
+                <div class="status-box-wrapper">
+                    <strong>Estado Actual:</strong>
+                    <div id="badge-estado" class="badge">
+                        </div>
+                </div>
+            </div>
+        </div>
 
-<p id="resultado"></p>
+        <footer class="consulta-help">
+            <p>¿Perdiste tu folio o tienes problemas con tu estado? Contacta al Staff de soporte técnico en nuestro servidor oficial de Discord.</p>
+        </footer>
+    </div>
 
-</div>
-
-<script>
-
-function consultar(){
-
-let folio=
-document.getElementById("folio").value;
-
-let estado=
-localStorage.getItem(folio);
-
-if(estado){
-
-document.getElementById("resultado").innerHTML=
-"🟡 Estado: "+estado;
-
-}else{
-
-document.getElementById("resultado").innerHTML=
-"❌ Folio no encontrado";
-
-}
-
-}
-
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
