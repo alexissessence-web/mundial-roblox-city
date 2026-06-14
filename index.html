@@ -1,50 +1,228 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial Roblox City 2026</title>
+    <style>
+        :root {
+            --primary: #E10600;
+            --secondary: #7A00FF;
+            --dark: #111111;
+            --light: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
 
-<title>Mundial Roblox City 2026</title>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#E10600,#7A00FF,#3557FF,#5EF2D6,#B8F000);
-    color:white;
-    text-align:center;
-    padding:50px;
-}
+        body {
+            background: linear-gradient(135deg, #E10600, #7A00FF, #3557FF, #5EF2D6);
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
 
-.container{
-    background:white;
-    color:black;
-    max-width:800px;
-    margin:auto;
-    padding:30px;
-    border-radius:20px;
-}
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-button{
-    background:#E10600;
-    color:white;
-    border:none;
-    padding:15px 30px;
-    border-radius:10px;
-    cursor:pointer;
-    margin:10px;
-}
-</style>
+        /* Contenedor tipo Tarjeta */
+        .card {
+            background: rgba(255, 255, 255, 0.98);
+            color: var(--text-dark);
+            max-width: 550px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Secciones (Vistas) */
+        .view {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Tipografía */
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        /* Grupo de Botones Principales */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Botones Base */
+        .btn {
+            padding: 16px 28px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #c00500;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(225, 6, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(122, 0, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: #6100cc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(122, 0, 255, 0.4);
+        }
+
+        .btn-back {
+            background: #e9ecef;
+            color: #495057;
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn-back:hover {
+            background: #dee2e6;
+        }
+
+        /* Formularios Estilizados */
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--secondary);
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(122, 0, 255, 0.1);
+        }
+
+        /* Adaptabilidad para PC */
+        @media (min-width: 480px) {
+            .btn-group {
+                flex-direction: row;
+            }
+            .btn { width: auto; flex: 1; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-<h1>🏆 MUNDIAL ROBLOX CITY 2026 ⚽</h1>
+<main class="card">
+    
+    <section id="view-menu" class="view active">
+        <h1>🏆 MUNDIAL ROBLOX CITY 2026 ⚽</h1>
+        <p>Bienvenido al sistema oficial de postulaciones. Elige una opción para continuar.</p>
+        
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="changeView('view-postular')">📝 Postularme</button>
+            <button class="btn btn-secondary" onclick="changeView('view-consulta')">🔍 Consultar Folio</button>
+        </div>
+    </section>
 
-<p>Bienvenido al sistema oficial de postulaciones.</p>
+    <section id="view-postular" class="view">
+        <h1>📝 Registro de Aspirante</h1>
+        <p>Completa tus datos para ingresar al proceso de selección.</p>
+        
+        <form onsubmit="handleSubmitPostulacion(event)">
+            <div class="form-group">
+                <label for="username">Usuario de Roblox (User / ID)</label>
+                <input type="text" id="username" placeholder="Ej: RobloxPlayer123" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="puesto">Posición / Rol a Postular</label>
+                <select id="puesto" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="jugador">Jugador Profesional</option>
+                    <option value="dt">Director Técnico (DT)</option>
+                    <option value="arbitro">Árbitro / Staff</option>
+                    <option value="creador">Creador de Contenido / Caster</option>
+                </select>
+            </div>
 
-<button>📝 Postularme</button>
-<button>🔍 Consultar Folio</button>
-</div>
+            <button type="submit" class="btn btn-primary">Enviar Postulación</button>
+        </form>
 
-</body>
-</html>
+        <button class="btn btn-back" onclick="changeView('view-menu')">⬅️ Volver al Inicio</button>
+    </section>
+
+    <section id="view-consulta" class="view">
+        <h1>🔍 Consulta tu Estado</h1>
+        <p>Introduce el código de folio que se asignó a tu registro.</p>
