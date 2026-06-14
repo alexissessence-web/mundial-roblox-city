@@ -3,71 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Mundial Roblox City 2026</title>
+    <title>Registro Oficial - Mundial Roblox City 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="container spec-container">
         <nav class="nav-links">
-            <a href="registro.html" class="active">Formulario de Registro</a> | 
-            <a href="consultar.html">Consultar Mi Estado</a>
+            <a href="index.html">Inicio</a> | 
+            <a href="registro.html" class="active">Registro</a> | 
+            <a href="consultar.html">Consultar Estado</a>
         </nav>
 
-        <h2>🏆 Registro de Aspirantes ⚽</h2>
-        <p class="subtitle">Mundial Roblox City 2026</p>
+        <header class="form-header">
+            <h2>🏆 REGISTRO OFICIAL ⚽</h2>
+            <h1>MUNDIAL ROBLOX CITY 2026</h1>
+            <p class="subtitle-alert">📌 IMPORTANTE: Al enviar recibirás un FOLIO ÚNICO para consultar tu estado (🟡, 🟢, 🔵, 🔴).</p>
+        </header>
 
         <form id="registro">
-            <div class="form-group">
-                <label for="nombre">Nombre Real:</label>
-                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+            <div class="section-block">
+                <h3>📝 SECCIÓN 1: DATOS PERSONALES</h3>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre y apellido" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" min="5" max="99" placeholder="Ej: 15" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ubicacion">Estado / Provincia / País:</label>
+                    <input type="text" id="ubicacion" placeholder="Ej: CDMX, México" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono / WhatsApp:</label>
+                    <input type="tel" id="telefono" placeholder="Ej: +52 55 XXXX XXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" placeholder="tu@correo.com" required>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="usuarioRoblox">Usuario de Roblox:</label>
-                <input type="text" id="usuarioRoblox" placeholder="Ej: RobloxPlayer_123" required>
+            <div class="section-block">
+                <h3>🎮 SECCIÓN 2: DATOS DE ROBLOX</h3>
+
+                <div class="form-group">
+                    <label for="usuarioRoblox">Usuario de Roblox (@User):</label>
+                    <input type="text" id="usuarioRoblox" placeholder="Ej: @RobloxPlayer" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="perfilRoblox">Perfil de Roblox (Opcional):</label>
+                    <input type="url" id="perfilRoblox" placeholder="Enlace a tu perfil">
+                </div>
+
+                <div class="form-group">
+                    <label>¿En qué horarios estás disponible? (Puedes marcar varios):</label>
+                    <div class="checkbox-list">
+                        <label><input type="checkbox" name="horario" value="Tarde"> Tarde (2:00 PM - 6:00 PM CDMX)</label>
+                        <label><input type="checkbox" name="horario" value="Noche"> Noche (6:00 PM - 10:00 PM CDMX)</label>
+                        <label><input type="checkbox" name="horario" value="Fines de Semana"> Fines de semana (Todo el día)</label>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="rol">Rol al que postulas:</label>
-                <select id="rol" required>
-                    <option value="" disabled selected>Selecciona un rol...</option>
-                    <option value="Jugador">⚽ Jugador</option>
-                    <option value="Árbitro">📢 Árbitro</option>
-                    <option value="Guardia">🛡️ Guardia de Seguridad</option>
-                    <option value="Taquilla">🎟️ Personal de Taquilla</option>
-                </select>
+            <div class="section-block">
+                <h3>🏆 SECCIÓN 3: POSTULACIÓN</h3>
+
+                <div class="form-group">
+                    <label for="rol">¿A qué puesto deseas postularte?</label>
+                    <select id="rol" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Jugador">⚽ Jugador (Competencia 5v5)</option>
+                        <option value="Árbitro">📢 Árbitro</option>
+                        <option value="Guardia">🛡️ Guardia de Seguridad</option>
+                        <option value="Taquilla">🎟️ Personal de Taquilla</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia">Experiencia previa:</label>
+                    <textarea id="experiencia" rows="3" placeholder="Escribe aquí tu experiencia en otros torneos o grupos..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="porque">¿Por qué deberíamos seleccionarte?</label>
+                    <textarea id="porque" rows="3" placeholder="Cuéntanos por qué eres el candidato ideal..." required></textarea>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="contacto">Información de Contacto:</label>
-                <input type="text" id="contacto" placeholder="Ej: Discord (User#0000) o Email" required>
+            <div class="section-block">
+                <h3>📸 SECCIÓN 4: AVATAR</h3>
+                <div class="form-group">
+                    <label for="avatarLink">Enlace de Imagen/Video de tu Avatar:</label>
+                    <p class="field-instruction">💡 Sube tu foto/video a Discord, Imgur o Drive y pega el enlace aquí.</p>
+                    <input type="url" id="avatarLink" placeholder="Ej: https://imgur.com/tu-avatar.png" required>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="disponibilidad">Disponibilidad Horaria:</label>
-                <input type="text" id="disponibilidad" placeholder="Ej: Fines de semana por la tarde" required>
+            <div class="section-block">
+                <h3>⚖️ SECCIÓN 5: TÉRMINOS Y CONDICIONES</h3>
+                <div class="checkbox-list terms-list">
+                    <label><input type="checkbox" required> Confirmo que la información proporcionada es verdadera.</label>
+                    <label><input type="checkbox" required> Me comprometo a asistir puntualmente a mis partidos o turnos.</label>
+                    <label><input type="checkbox" required> Acepto aparecer en transmisiones en vivo de TikTok y material promocional.</label>
+                    <label><input type="checkbox" required> Acepto los términos y condiciones del evento.</label>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="experiencia">Experiencia Previa (Opcional):</label>
-                <textarea id="experiencia" rows="3" placeholder="Cuéntanos si has participado o trabajado en otros torneos..."></textarea>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="terminos" required>
-                <label for="terminos">Acepto los términos y condiciones del torneo.</label>
-            </div>
-
-            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+            <button type="submit" class="btn-submit">✅ FINALIZAR REGISTRO</button>
         </form>
 
         <div id="contenedor-folio" class="hidden">
-            <div class="ticket">
-                <h3>¡Registro Exitoso! 🎉</h3>
-                <p>Tu postulación se ha guardado en la base de datos de Google. Guarda tu número de folio:</p>
-                <strong id="folio"></strong>
-                <p class="nota-ticket">Usa este código en la sección de consultas para ver si fuiste aprobado.</p>
+            <div class="ticket-box">
+                <span class="ticket-emoji">🎟️</span>
+                <h3>¡REGISTRO RECIBIDO CON ÉXITO!</h3>
+                <p>Tu solicitud ha sido guardada en la base de datos.</p>
+                <div class="folio-display">
+                    <span class="folio-label">TU FOLIO ÚNICO:</span>
+                    <strong id="folio">MRC26-00000</strong>
+                </div>
+                <p class="nota">⚠️ Guarda este código. Lo necesitarás en la sección de <strong>Consultar Estado</strong> para revisar si fuiste aceptado.</p>
+                <a href="index.html" class="btn-return">Volver al Inicio</a>
             </div>
         </div>
     </div>
