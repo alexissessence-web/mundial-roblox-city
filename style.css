@@ -1,60 +1,77 @@
-/* Navegación entre pestañas */
-.nav-links {
-    margin-bottom: 25px;
+.spec-container {
+    max-width: 650px;
+    text-align: left;
+}
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.subtitle-alert {
+    background: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    border-radius: 8px;
     font-size: 0.9rem;
-}
-.nav-links a {
-    color: #7A00FF;
-    text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
+    margin-top: 10px;
+    border: 1px solid #ffeeba;
 }
-.nav-links a.active {
-    color: #E10600;
-    border-bottom: 2px solid #E10600;
+.section-block {
+    background: #fdfdfd;
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
 }
-
-/* Campos de Texto e Inputs específicos */
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 1rem;
-    box-sizing: border-box;
-    resize: none;
+.section-block h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--secondary);
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
 }
-.checkbox-group {
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+.checkbox-list label {
+    font-weight: normal;
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
-.checkbox-group input {
-    width: 18px;
-    height: 18px;
+.terms-list label {
+    font-size: 0.9rem;
+    color: #444;
 }
-
-/* Tarjetas de Resultados y Badges */
-.resultado-card {
-    margin-top: 25px;
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: left;
+.field-instruction {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin: -4px 0 6px 0;
 }
-.badge {
+/* Caja del Ticket Exitoso */
+.ticket-box {
+    text-align: center;
+    padding: 30px 20px;
+}
+.ticket-emoji { font-size: 3.5rem; }
+.folio-display {
+    background: #f1f3f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px dashed var(--secondary);
+}
+.folio-label { display: block; font-size: 0.85rem; color: #666; }
+#folio { font-size: 1.8rem; color: var(--primary); letter-spacing: 2px; }
+.btn-return {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 20px;
+    color: var(--secondary);
+    text-decoration: none;
     font-weight: bold;
-    border-radius: 30px;
-    color: white;
-    font-size: 1.1rem;
 }
-
-/* Colores de los Estados oficiales */
-.estado-revision { background-color: #eab308; color: #000; } /* Amarillo */
-.estado-aprobado { background-color: #22c55e; }             /* Verde */
-.estado-espera { background-color: #3b82f6; }               /* Azul */
-.estado-rechazado { background-color: #ef4444; }             /* Rojo */
