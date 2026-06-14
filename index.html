@@ -3,226 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundial Roblox City 2026</title>
-    <style>
-        :root {
-            --primary: #E10600;
-            --secondary: #7A00FF;
-            --dark: #111111;
-            --light: #f8f9fa;
-            --text-dark: #1a1a1a;
-            --radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        /* Reset básico */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #E10600, #7A00FF, #3557FF, #5EF2D6);
-            background-size: 300% 300%;
-            animation: gradientMove 12s ease infinite;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: white;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Contenedor tipo Tarjeta */
-        .card {
-            background: rgba(255, 255, 255, 0.98);
-            color: var(--text-dark);
-            max-width: 550px;
-            width: 100%;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Secciones (Vistas) */
-        .view {
-            display: none;
-            animation: fadeIn 0.4s ease forwards;
-        }
-
-        .view.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Tipografía */
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: var(--dark);
-            line-height: 1.2;
-        }
-
-        p {
-            color: #666;
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-        }
-
-        /* Grupo de Botones Principales */
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* Botones Base */
-        .btn {
-            padding: 16px 28px;
-            font-size: 1rem;
-            font-weight: 700;
-            border: none;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #c00500;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(225, 6, 0, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(122, 0, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: #6100cc;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(122, 0, 255, 0.4);
-        }
-
-        .btn-back {
-            background: #e9ecef;
-            color: #495057;
-            margin-top: 20px;
-            padding: 12px 20px;
-            font-size: 0.9rem;
-        }
-
-        .btn-back:hover {
-            background: #dee2e6;
-        }
-
-        /* Formularios Estilizados */
-        .form-group {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #444;
-            font-size: 0.95rem;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: var(--transition);
-            outline: none;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            border-color: var(--secondary);
-            background-color: #fff;
-            box-shadow: 0 0 0 4px rgba(122, 0, 255, 0.1);
-        }
-
-        /* Adaptabilidad para PC */
-        @media (min-width: 480px) {
-            .btn-group {
-                flex-direction: row;
-            }
-            .btn { width: auto; flex: 1; }
-        }
-    </style>
+    <title>Mundial Roblox City 2026 - Sitio Oficial</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<main class="card">
-    
-    <section id="view-menu" class="view active">
-        <h1>🏆 MUNDIAL ROBLOX CITY 2026 ⚽</h1>
-        <p>Bienvenido al sistema oficial de postulaciones. Elige una opción para continuar.</p>
+    <div class="container home-container">
         
-        <div class="btn-group">
-            <button class="btn btn-primary" onclick="changeView('view-postular')">📝 Postularme</button>
-            <button class="btn btn-secondary" onclick="changeView('view-consulta')">🔍 Consultar Folio</button>
-        </div>
-    </section>
-
-    <section id="view-postular" class="view">
-        <h1>📝 Registro de Aspirante</h1>
-        <p>Completa tus datos para ingresar al proceso de selección.</p>
-        
-        <form onsubmit="handleSubmitPostulacion(event)">
-            <div class="form-group">
-                <label for="username">Usuario de Roblox (User / ID)</label>
-                <input type="text" id="username" placeholder="Ej: RobloxPlayer123" required>
+        <header class="home-header">
+            <div class="logo-area">
+                <span class="emoji-logo">🏆</span>
+                <h1>MUNDIAL ROBLOX CITY 2026</h1>
+                <span class="emoji-logo">⚽</span>
             </div>
+            <p class="tagline">Inspirado en la FIFA World Cup 2026 | Formato Profesional 5v5</p>
+        </header>
+
+        <hr class="divider">
+
+        <section class="info-section">
+            <h3>¿Qué es el Mundial Roblox City?</h3>
+            <p>Es el torneo de fútbol virtual más esperado dentro de la plataforma. Contaremos con partidos en alta intensidad, personal administrativo dedicado, transmisiones en vivo a través de <strong>TikTok Live</strong> y una infraestructura organizada para llevar la pasión del mundial al entorno de Roblox.</p>
+        </section>
+
+        <section class="action-panel">
+            <h3>Plataforma de Aspirantes</h3>
+            <p>Selecciona una opción para interactuar con el comité organizador:</p>
             
-            <div class="form-group">
-                <label for="puesto">Posición / Rol a Postular</label>
-                <select id="puesto" required>
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="jugador">Jugador Profesional</option>
-                    <option value="dt">Director Técnico (DT)</option>
-                    <option value="arbitro">Árbitro / Staff</option>
-                    <option value="creador">Creador de Contenido / Caster</option>
-                </select>
+            <div class="home-buttons">
+                <a href="registro.html" class="btn-home btn-register">
+                    <span class="icon">📝</span>
+                    <div class="btn-text">
+                        <strong>Postularme al Torneo</strong>
+                        <span>Jugadores, Árbitros, Guardias y Taquilla</span>
+                    </div>
+                </a>
+
+                <a href="consultar.html" class="btn-home btn-search">
+                    <span class="icon">🔍</span>
+                    <div class="btn-text">
+                        <strong>Consultar Mi Folio</strong>
+                        <span>Verifica el estado actual de tu solicitud</span>
+                    </div>
+                </a>
             </div>
+        </section>
 
-            <button type="submit" class="btn btn-primary">Enviar Postulación</button>
-        </form>
+        <section class="roles-section">
+            <h3>Roles y Personal del Torneo</h3>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon">⚽</div>
+                    <h4>Jugadores</h4>
+                    <p>Compite en las escuadras oficiales.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">📢</div>
+                    <h4>Árbitros</h4>
+                    <p>Aplica el reglamento en la cancha.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">🛡️</div>
+                    <h4>Seguridad</h4>
+                    <p>Mantén el orden en las gradas.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">🎟️</div>
+                    <h4>Taquilla</h4>
+                    <p>Gestiona los accesos del público.</p>
+                </div>
+            </div>
+        </section>
 
-        <button class="btn btn-back" onclick="changeView('view-menu')">⬅️ Volver al Inicio</button>
-    </section>
+        <footer class="home-footer">
+            <p>© 2026 Mundial Roblox City. Todos los derechos reservados.</p>
+            <p class="disclaimer">Este es un evento organizado por la comunidad y no está afiliado oficialmente con Roblox Corporation ni la FIFA.</p>
+        </footer>
 
-    <section id="view-consulta" class="view">
-        <h1>🔍 Consulta tu Estado</h1>
-        <p>Introduce el código de folio que se asignó a tu registro.</p>
+    </div>
+
+</body>
+</html>
