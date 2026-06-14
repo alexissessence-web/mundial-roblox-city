@@ -1,42 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Registro</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Mundial Roblox City 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
+        <nav class="nav-links">
+            <a href="registro.html" class="active">Formulario de Registro</a> | 
+            <a href="consultar.html">Consultar Mi Estado</a>
+        </nav>
 
-<h2>Registro Mundial Roblox City 2026</h2>
+        <h2>🏆 Registro de Aspirantes ⚽</h2>
+        <p class="subtitle">Mundial Roblox City 2026</p>
 
-<form id="registro">
+        <form id="registro">
+            <div class="form-group">
+                <label for="nombre">Nombre Real:</label>
+                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
 
-<input type="text" placeholder="Nombre" required><br><br>
+            <div class="form-group">
+                <label for="usuarioRoblox">Usuario de Roblox:</label>
+                <input type="text" id="usuarioRoblox" placeholder="Ej: RobloxPlayer_123" required>
+            </div>
 
-<input type="text" placeholder="Usuario Roblox" required><br><br>
+            <div class="form-group">
+                <label for="rol">Rol al que postulas:</label>
+                <select id="rol" required>
+                    <option value="" disabled selected>Selecciona un rol...</option>
+                    <option value="Jugador">⚽ Jugador</option>
+                    <option value="Árbitro">📢 Árbitro</option>
+                    <option value="Guardia">🛡️ Guardia de Seguridad</option>
+                    <option value="Taquilla">🎟️ Personal de Taquilla</option>
+                </select>
+            </div>
 
-<select>
-<option>Jugador</option>
-<option>Árbitro</option>
-<option>Guardia</option>
-<option>Taquilla</option>
-</select>
+            <div class="form-group">
+                <label for="contacto">Información de Contacto:</label>
+                <input type="text" id="contacto" placeholder="Ej: Discord (User#0000) o Email" required>
+            </div>
 
-<br><br>
+            <div class="form-group">
+                <label for="disponibilidad">Disponibilidad Horaria:</label>
+                <input type="text" id="disponibilidad" placeholder="Ej: Fines de semana por la tarde" required>
+            </div>
 
-<button type="submit">
-Enviar Solicitud
-</button>
+            <div class="form-group">
+                <label for="experiencia">Experiencia Previa (Opcional):</label>
+                <textarea id="experiencia" rows="3" placeholder="Cuéntanos si has participado o trabajado en otros torneos..."></textarea>
+            </div>
 
-</form>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terminos" required>
+                <label for="terminos">Acepto los términos y condiciones del torneo.</label>
+            </div>
 
-<p id="folio"></p>
+            <button type="submit" class="btn-submit">Enviar Solicitud</button>
+        </form>
 
-</div>
+        <div id="contenedor-folio" class="hidden">
+            <div class="ticket">
+                <h3>¡Registro Exitoso! 🎉</h3>
+                <p>Tu postulación se ha guardado en la base de datos de Google. Guarda tu número de folio:</p>
+                <strong id="folio"></strong>
+                <p class="nota-ticket">Usa este código en la sección de consultas para ver si fuiste aprobado.</p>
+            </div>
+        </div>
+    </div>
 
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
