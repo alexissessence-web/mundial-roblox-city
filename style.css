@@ -1,34 +1,60 @@
-body{
-font-family:Arial;
-background:linear-gradient(
-135deg,
-#E10600,
-#7A00FF,
-#3557FF,
-#5EF2D6,
-#B8F000
-);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+/* Navegación entre pestañas */
+.nav-links {
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+.nav-links a {
+    color: #7A00FF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.nav-links a.active {
+    color: #E10600;
+    border-bottom: 2px solid #E10600;
 }
 
-.container{
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
-width:90%;
-max-width:700px;
+/* Campos de Texto e Inputs específicos */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: none;
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkbox-group input {
+    width: 18px;
+    height: 18px;
 }
 
-button{
-background:#E10600;
-color:white;
-padding:15px 25px;
-border:none;
-border-radius:10px;
-margin:10px;
-cursor:pointer;
+/* Tarjetas de Resultados y Badges */
+.resultado-card {
+    margin-top: 25px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
 }
+.badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Colores de los Estados oficiales */
+.estado-revision { background-color: #eab308; color: #000; } /* Amarillo */
+.estado-aprobado { background-color: #22c55e; }             /* Verde */
+.estado-espera { background-color: #3b82f6; }               /* Azul */
+.estado-rechazado { background-color: #ef4444; }             /* Rojo */
